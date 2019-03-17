@@ -70,5 +70,12 @@
     "ignore": [
       "example/**"
     ]
-  }
+  },
+  "keywords": [
+    "vue",
+    "it-just-works",
+    "element-ui",
+    "dvan",
+    "form"
+  ]
 }
