@@ -1,0 +1,14 @@
+{
+  "name": "clients",
+  "scripts": {
+    "dev": "node -r dotenv/config scripts/update.js",
+    "update": "node scripts/update.js"
+  },
+  "author": "2nthony",
+  "homepage": "https://github.com/2nthony/clients#readme",
+  "devDependencies": {
+    "@2nthony/prettier-config": "^1.0.0",
+    "@notionhq/client": "^0.4.8",
+    "dotenv": "^10.0.0"
+  }
+}
