@@ -39,6 +39,7 @@ const notion = new Client({ auth: NOTION_TOKEN })
       times: properties.Times.number,
       description: properties.Description.rich_text[0].plain_text,
       website: properties.Website.url,
+      location: properties.Location.select.name,
     }
   })
 
@@ -46,7 +47,8 @@ const notion = new Client({ auth: NOTION_TOKEN })
   const cooperatorsString = cooperators
     .map((i) => {
       const name = i.website ? `[${i.name}](${i.website})` : i.name
-      return `- ${name}\`(${i.times} times)\` - ${i.description}`
+      // return `- ${name}\`(${i.times} times)\` - ${i.description}`
+      return `|${name}|\`${i.location}\`|\`${i.times}\`|${i.description}|`
     })
     .join('\n')
 
@@ -58,8 +60,11 @@ function replacer(code, value, key) {
   const START = `<!--${key}_STARTS-->`
   const END = `<!--${key}_ENDS-->`
   const regex = new RegExp(`${START}[\\s\\S]*?${END}`, 'im')
+  const header = `|Team/Name|Location|Times|Description|\n|-|-|-|-|`
 
-  const target = value ? `${START}\n${value}\n${END}\n` : `${START}${END}\n`
+  const target = value
+    ? `${START}\n${header}\n${value}\n${END}\n`
+    : `${START}${END}\n`
 
   return code.replace(regex, target).trim()
 }
