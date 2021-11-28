@@ -1,7 +1,8 @@
 # Clients
 
+You can contact me via <a href="mailto:ant.hu@outlook.com?subject=[Client%20Cooperation]%20We%20want%20to...">✉️ Email</a> .
+
 ## Recently cooperators
 
 <!--COOPERATORS_STARTS-->
-- [teamSFS](http://team-sfs.xyz/)`(1 times)` - Personalize macMineable(https://github.com/2nthony/macmineable)
 <!--COOPERATORS_ENDS-->
